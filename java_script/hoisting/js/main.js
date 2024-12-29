@@ -47,3 +47,12 @@ function exampleLet() {
         console.log(`${b} trong block scope`);
     }
 }
+
+// Re-declaration:
+// var
+var diemToan;
+var diemToan;
+
+// let
+let diemVan
+// let diemVan;
