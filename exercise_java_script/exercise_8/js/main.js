@@ -84,50 +84,45 @@ Bai tap 31: vt chuong trinh co ten timeSet, thong bao nguoi dung offline x phut.
         => Yeu cau: update hien thi thoi gian ban A offline 'x giay truoc', 'x ngay truoc', 'x thang truoc', 'x nam truoc'
 */
 // Vi du su dung
-const timestamp = 1707206532854;
-const now = new Date();
+function timeSince() {
+    const timestamp = 1707206532854;
+    const now = new Date();
 
-const differenceTimestamp = now - timestamp;
+    const differenceTimestamp = now - timestamp;
 
-const seconds = Math.floor(differenceTimestamp / 1000);
-const minutes = Math.floor(seconds / 60);
-const hours = Math.floor(minutes / 60);
-const days = Math.floor(hours / 24);
-const months = Math.floor(days / 30);
-const years = Math.floor(months / 12);
+    const seconds = Math.floor(differenceTimestamp / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const months = Math.floor(days / 30);
+    const years = Math.floor(months / 12);
 
-function getMessage() {
     let str = "Online ";
 
     if (seconds <= 60) {
-        console.log(str + seconds + " giay truoc");
-        return;
+        return str + seconds + " giay truoc";
     } else if (minutes <= 60) {
-        console.log(str + minutes + " phut truoc");
-        return;
+        return str + minutes + " phut truoc";
     } else if (hours <= 60) {
-        console.log(str + hours + " gio truoc");
-        return;
+        return str + hours + " gio truoc";
     } else if (days <= 30) {
-        console.log(str + days + " ngay truoc");
-        return;
+        return str + days + " ngay truoc";
     } else if (months <= 12) {
-        console.log(str + months + " thang truoc");
-        return;
+        return str + months + " thang truoc";
     } else {
-        console.log(str + years + " nam truoc");
+        return str + years + " nam truoc";
     }
 }
 
 function main() {
-    // let birthYear = inputBirthYear();
+    let birthYear = inputBirthYear();
 
-    // getAge(birthYear);
+    getAge(birthYear);
 
-    // let minutes = inputMinutes();
-    // countDown(minutes);
+    let minutes = inputMinutes();
+    countDown(minutes);
 
-    getMessage();
+    let timeOffline = timeSince();
 }
 
 main();
